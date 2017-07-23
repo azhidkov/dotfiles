@@ -349,7 +349,7 @@ ino {<cr> {<cr>}<esc>o
 " MRU
 let MRU_Add_Menu = 0 " disable menu in gvim
 let MRU_Exclude_Files = 'tags'
-map <c-e> :MRU<cr>
+map <leader>e :MRU<cr>
 
 " NERD Tree
 let g:NERDTreeWinPos = "left"
