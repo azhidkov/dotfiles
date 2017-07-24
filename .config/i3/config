@@ -171,4 +171,4 @@ bar {
 
 # run apps for work
 exec skypeforlinux
-exex ywservice
+exec ywservice
