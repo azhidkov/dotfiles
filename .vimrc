@@ -1,3 +1,6 @@
+" TODO try this:
+" https://github.com/vim-airline/vim-airline
+" http://dobroserver.ru/delaem-iz-zsh-morozhenku
 " nocompatible has to be the first  of all 
 set nocompatible
 
