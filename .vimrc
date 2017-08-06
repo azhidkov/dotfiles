@@ -61,7 +61,7 @@ set wildmenu
 set wildignorecase
 
 " Ignore compiled files
-set wildignore=*.o,*~,*.pyc,*.class,*.sln,*.Master,*.csproj,*.csproj.user,*.cache,*.dll,*.pdb
+set wildignore=*.o,*~,*.pyc,*.class,*.sln,*.Master,*.csproj,*.csproj.user,*.cache,*.dll,*.pdb,*.jar,*.zip,*.rar,*7z
 if has("win16") || has("win32")
     set wildignore+=.git\*,.hg\*,.svn\*
 else
@@ -350,9 +350,15 @@ ino {<cr> {<cr>}<esc>o
 " => Plugin settings
 """""""""""""""""""""""""""""""""""
 " MRU
-let MRU_Add_Menu = 0 " disable menu in gvim
-let MRU_Exclude_Files = 'tags'
-map <leader>e :MRU<cr>
+"let MRU_Add_Menu = 0 " disable menu in gvim
+"let MRU_Exclude_Files = 'tags'
+"map <leader>e :MRU<cr>
+
+" CtrlP
+map <c-e> :CtrlPMRU<cr>
+map <c-b> :CtrlPBuffer<cr>
+let g:ctrlp_max_height = 20
+let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee'
 
 " NERD Tree
 let g:NERDTreeWinPos = "left"
