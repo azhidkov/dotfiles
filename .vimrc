@@ -382,6 +382,10 @@ let g:syntastic_check_on_wq = 1
 " PHP
 let g:syntastic_php_checkers = ['php'] "phpstan
 
+" Tagbar 
+let g:tagbar_autoclose = 1
+map <leader>tt :TagbarToggle<cr>
+
 " lightline
 set noshowmode
 let g:lightline = {
