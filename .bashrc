@@ -17,3 +17,6 @@ alias ec='emacsclient -c'
 # Use vim with system clipboard
 alias vim='vimx'
 alias vi='vimx'
+
+# Disable Software Flow Control (see https://unix.stackexchange.com/questions/72086/ctrl-s-hang-terminal-emulator#72092)
+stty -ixon
