@@ -335,16 +335,31 @@ set guioptions-=R
 set guioptions-=l
 set guioptions-=L
 
+" Open man pages in vim, e.g. :Man find
+runtime! ftplugin/man.vim
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Parenthesis/bracket
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " https://stackoverflow.com/a/34992101/691194
-ino " ""<left>
-ino ' ''<left>
-ino ( ()<left>
-ino [ []<left>
-ino { {}<left>
-ino {<cr> {<cr>}<esc>o
+"ino " ""<left>
+"ino ' ''<left>
+"ino ( ()<left>
+"ino [ []<left>
+"ino { {}<left>
+"ino {<cr> {<cr>}<esc>o
+
+"""""""""""""""""""""""""""""""""""
+" Autocomplete
+"""""""""""""""""""""""""""""""""""
+" https://stackoverflow.com/questions/510503/ctrlspace-for-omni-and-keyword-completion-in-vim
+inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
+\ "\<lt>C-n>" :
+\ "\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?" .
+\ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
+\ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
+imap <C-@> <C-Space>
+
 
 """""""""""""""""""""""""""""""""""
 " => Plugin settings
@@ -385,6 +400,25 @@ let g:syntastic_php_checkers = ['php'] "phpstan
 " Tagbar 
 let g:tagbar_autoclose = 1
 map <leader>tt :TagbarToggle<cr>
+let g:tagbar_type_typescript = {
+  \ 'ctagstype': 'typescript',
+  \ 'kinds': [
+    \ 'c:classes',
+    \ 'n:modules',
+    \ 'f:functions',
+    \ 'v:variables',
+    \ 'v:varlambdas',
+    \ 'm:members',
+    \ 'i:interfaces',
+    \ 'e:enums',
+  \ ]
+\ }
+
+" Ack
+if executable('ag')
+  "let g:ackprg = 'ag --vimgrep'
+  let g:ackprg = 'ag --nogroup --nocolor --column'
+endif
 
 " lightline
 set noshowmode
