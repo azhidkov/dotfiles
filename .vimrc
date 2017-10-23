@@ -142,8 +142,8 @@ endif
 "catch
 "endtry
 
-" use dark theme
-set background=dark
+" use light theme
+set background=light
 
 " Set extra options when running in GUI mode
 if has("gui_running")
@@ -424,9 +424,6 @@ endif
 set noshowmode
 let g:lightline = {
       \ 'colorscheme': 'solarized',
-      \ }
-let g:lightline = {
-      \ 'colorscheme': 'wombat',
       \ 'active': {
       \   'left': [ ['mode', 'paste'],
       \             ['fugitive', 'readonly', 'filename', 'modified'] ],
