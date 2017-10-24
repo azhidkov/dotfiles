@@ -12,9 +12,7 @@ execute pathogen#infect()
 """"""""""""""""""""""""""""""""""
 " 1. Solarized Colorscheme for Vim - https://github.com/altercation/vim-colors-solarized
 "   Before install solarized theme - https://github.com/sgerrand/xfce4-terminal-colors-solarized
-" 2. Most Recently Used (MRU) files - https://github.com/vim-scripts/mru.vim
-" 3. NERD Tree https://github.com/scrooloose/nerdtree
-
+" 2. NERD Tree https://github.com/scrooloose/nerdtree
 
 """"""""""""""""""""""""""""""""""
 " => General
@@ -61,14 +59,14 @@ set wildmenu
 set wildignorecase
 
 " Ignore compiled files
-set wildignore=*.o,*~,*.pyc,*.class,*.sln,*.Master,*.csproj,*.csproj.user,*.cache,*.dll,*.pdb,*.jar,*.zip,*.rar,*7z
+set wildignore=*.o,*~,*.pyc,*.class,*.sln,*.Master,*.csproj,*.csproj.user,*.cache,*.dll,*.pdb,*.jar,*.zip,*.rar,*.7z
 if has("win16") || has("win32")
     set wildignore+=.git\*,.hg\*,.svn\*
 else
     set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
 endif
 set wildignore+=*.swp,*.bak
-set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png,*.ico
+set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png,
 set wildignore+=*.pdf,*.psd
 set wildignore+=node_modules/*,bower_components/*
 
