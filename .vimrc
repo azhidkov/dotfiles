@@ -18,7 +18,11 @@ execute pathogen#infect()
 " => General
 """"""""""""""""""""""""""""""""""
 " use system clipboard
-set clipboard=unnamedplus
+if has("mac") || has("macunix")
+  set clipboard=unnamed
+else
+  set clipboard=unnamedplus
+endif
 
 " Sets how many lines of history VIM has to remember
 set history=500
