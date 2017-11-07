@@ -20,3 +20,5 @@ alias vi='vimx'
 
 # Disable Software Flow Control (see https://unix.stackexchange.com/questions/72086/ctrl-s-hang-terminal-emulator#72092)
 stty -ixon
+
+export EDITOR=vim
