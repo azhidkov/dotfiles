@@ -170,8 +170,8 @@ bar {
 }
 
 # run apps for work
-exec skypeforlinux
-exec ywservice
+exec ywservice &
+exec skypeforlinux &
 
 # set up layout switch with caps lock button
 exec setxkbmap -layout "us,ru" -option "grp:caps_toggle"
