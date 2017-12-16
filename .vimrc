@@ -70,10 +70,10 @@ else
     set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
 endif
 set wildignore+=*.swp,*.bak
-set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png,
+set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.jpeg,*.png,
 set wildignore+=*.pdf,*.psd
 set wildignore+=node_modules/*,bower_components/*
-
+set wildignore+=*.min.js
 
 " Always show current position
 set ruler
@@ -366,17 +366,6 @@ imap <C-@> <C-Space>
 """""""""""""""""""""""""""""""""""
 " => Plugin settings
 """""""""""""""""""""""""""""""""""
-" MRU
-"let MRU_Add_Menu = 0 " disable menu in gvim
-"let MRU_Exclude_Files = 'tags'
-"map <leader>e :MRU<cr>
-
-" CtrlP
-map <c-e> :CtrlPMRU<cr>
-map <c-b> :CtrlPBuffer<cr>
-let g:ctrlp_max_height = 20
-let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee'
-
 " Syntastic 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
