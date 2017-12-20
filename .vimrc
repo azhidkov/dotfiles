@@ -396,6 +396,11 @@ let g:tagbar_type_typescript = {
   \ ]
 \ }
 
+if executable('uctags')
+    let g:tagbar_ctags_bin = 'uctags'
+endif
+
+
 " Ack
 if executable('ag')
   "let g:ackprg = 'ag --vimgrep'
