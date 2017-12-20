@@ -1,3 +1,8 @@
+" Note: for correcting work you also need install following apps
+" and add them to to PATH:
+" 1. The silver searcher (ag): https://github.com/ggreer/the_silver_searcher
+" 2. Universal ctags (compiled as uctags): https://ctags.io/
+"
 " TODO try this:
 " https://github.com/vim-airline/vim-airline
 " http://dobroserver.ru/delaem-iz-zsh-morozhenku
