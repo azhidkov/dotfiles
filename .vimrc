@@ -133,8 +133,8 @@ set foldcolumn=1
 """"""""""""""""""""""""""""""""""
 " => Colors and Fonts
 """"""""""""""""""""""""""""""""""
-" Enable syntax highlighting
-syntax on
+" Disable syntax highlighting
+syntax off
 
 " Enable 256 colors palette in Gnome Terminal
 if !has("gui_running")
