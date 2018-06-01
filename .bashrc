@@ -24,3 +24,7 @@ fi
 stty -ixon
 
 export EDITOR=vim
+
+# Writing to bash history immediatelly
+shopt -s histappend
+PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
