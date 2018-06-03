@@ -384,6 +384,10 @@ let g:syntastic_check_on_wq = 1
 " PHP
 let g:syntastic_php_checkers = ['php'] "phpstan
 
+" C++
+let g:syntastic_cpp_compiler = 'clang++'
+let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
+
 " Tagbar 
 let g:tagbar_autoclose = 1
 map <leader>tt :TagbarToggle<cr>
