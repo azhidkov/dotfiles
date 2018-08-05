@@ -12,11 +12,13 @@
 
 ;; higlight paranthesis
 (setq show-paren-delay 0)
-(setq make-backup-files nil)
-;; (setq scroll-margin 7)
 (show-paren-mode 1)
+;; (setq scroll-margin 7)
 
-;; enable IDO Mode
+;; disable backup files
+(setq make-backup-files nil)
+
+;; enable ido mode
 (ido-mode 1)
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
@@ -32,18 +34,29 @@
   ;;(add-to-list 'package-archives (cons "melpa-stable" (concat proto "://stable.melpa.org/packages/")) t)
 (package-initialize)
 
-;; Installed packages with MELPA
+;; installed packages with MELPA
 ;; company, cmake-mode, flycheck, exec-path-from-shell
 
-;; CMAKE
+;; cmake-mode
+(unless (package-installed-p 'cmake-mode)
+  (package-install 'cmake-mode))
 (setq load-path (cons (expand-file-name "/dir/with/cmake-mode") load-path))
 (require 'cmake-mode)
 
+;; company
+(unless (package-installed-p 'company)
+  (package-install 'company))
+
 ;; exec-path-from-shell
 (when (memq window-system '(mac ns x))
+  (unless (package-installed-p 'exec-path-from-shell)
+    (package-install 'exec-path-from-shell))
+
   (exec-path-from-shell-initialize))
 
-;; FlyCheck
+;; flycheck
+(unless (package-installed-p 'flycheck)
+  (package-install 'flycheck))
 (add-hook 'after-init-hook #'global-flycheck-mode)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
