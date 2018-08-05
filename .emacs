@@ -21,6 +21,10 @@
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
 
+;; disable startup splash screen
+(setq inhibit-startup-message t
+      inhibit-startup-echo-area-message t)
+
 ;; MELPA
 (require 'package)
 (add-to-list 'package-archives
