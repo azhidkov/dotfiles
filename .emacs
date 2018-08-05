@@ -28,6 +28,9 @@
   ;;(add-to-list 'package-archives (cons "melpa-stable" (concat proto "://stable.melpa.org/packages/")) t)
 (package-initialize)
 
+;; Installed packages with MELPA
+;; company, cmake-mode, flycheck, exec-path-from-shell
+
 ;; CMAKE
 (setq load-path (cons (expand-file-name "/dir/with/cmake-mode") load-path))
 (require 'cmake-mode)
@@ -43,7 +46,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (exec-path-from-shell flycheck))))
+ '(package-selected-packages (quote (company exec-path-from-shell flycheck))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
