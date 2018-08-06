@@ -7,9 +7,11 @@ fi
 
 # User specific environment and startup programs
 
-PATH=$PATH:$HOME/.local/bin:$HOME/bin
-
+PATH=$PATH:$HOME/.local/bin:$HOME/bin:/usr/local/go/bin
 export PATH
+
+export GOPATH=$HOME/go
+export GOBIN=$HOME/go/bin
 
 # set up command prompt in Terminal.app
 if [[ "$OSTYPE" == "darwin"* ]]; then
