@@ -16,8 +16,8 @@
 
 ;; enable ido mode
 (ido-mode 1)
+(ido-everywhere t)
 (setq ido-enable-flex-matching t)
-(setq ido-everywhere t)
 
 ;; fix keyboard bindings
 ;(setq mac-option-modifier 'super)
@@ -54,6 +54,14 @@
   (package-install 'projectile))
 (require 'projectile)
 (projectile-mode t)
+
+;; flx-mode
+(unless (package-installed-p 'flx-ido)
+  (package-install 'flx-ido))
+(require 'flx-ido)
+(flx-ido-mode 1)
+;; disable ido faces to see flx hightlight
+(setq ido-use-faces nil)
 
 ;; flycheck
 (unless (package-installed-p 'flycheck)
