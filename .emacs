@@ -10,7 +10,7 @@
 (setq show-paren-delay 0)              ; highlight paranthesis immediately
 (setq visible-bell nil)                ; disable annoying visual bell graphics
 (setq ring-bell-function 'ignore)      ; disable annoying audio bell
-(set-face-attribute 'default nil :height 180) ; set font size to 18pt
+(set-frame-font "Source Code Pro 20")  ; set font
 ;(global-display-line-numbers-mode 1)  ; show line numbers
 
 ;; enable ido mode
@@ -18,7 +18,7 @@
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
 
-;; fix keyboard bindingsk
+;; fix keyboard bindings
 ;(setq mac-option-modifier 'super)
 ;(setq mac-command-modifier 'meta)
 
