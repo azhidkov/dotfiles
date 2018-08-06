@@ -11,6 +11,7 @@
 (setq visible-bell nil)                ; disable annoying visual bell graphics
 (setq ring-bell-function 'ignore)      ; disable annoying audio bell
 (set-frame-font "Source Code Pro 20")  ; set font
+;(global-hl-line-mode +1)              ; highlight the current line
 ;(global-display-line-numbers-mode 1)  ; show line numbers
 
 ;; enable ido mode
@@ -47,6 +48,12 @@
     (package-install 'exec-path-from-shell))
 
   (exec-path-from-shell-initialize))
+
+;; projectile
+(unless (package-installed-p 'projectile)
+  (package-install 'projectile))
+(require 'projectile)
+(projectile-mode t)
 
 ;; flycheck
 (unless (package-installed-p 'flycheck)
