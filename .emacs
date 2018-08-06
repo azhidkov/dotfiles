@@ -19,6 +19,12 @@
 (ido-everywhere t)
 (setq ido-enable-flex-matching t)
 
+;; enable recentf-mode
+(recentf-mode 1)
+(setq recentf-max-menu-items 25)
+(run-at-time nil (* 5 60) 'recentf-save-list) ;; save every 5 minutes
+(global-set-key "\C-x\ \C-r" 'recentf-open-files)
+
 ;; fix keyboard bindings
 ;(setq mac-option-modifier 'super)
 ;(setq mac-command-modifier 'meta)
