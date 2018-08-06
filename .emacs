@@ -1,37 +1,31 @@
-;; (menu-bar-mode -1)
-;; hide all garbadge
-(tool-bar-mode -1)
-(scroll-bar-mode -1)
-
-;; set font to 18
-(set-face-attribute 'default nil :height 180)
-;; (global-display-line-numbers-mode 1)
-
-;; no tabs
-(setq-default indent-tabs-mode nil)
-
-;; higlight paranthesis
-(setq show-paren-delay 0)
-(show-paren-mode 1)
-;; (setq scroll-margin 7)
-
-;; disable backup files
-(setq make-backup-files nil)
+;; high level aesthetic stuff
+;(menu-bar-mode -1)                    ; disable menu
+(tool-bar-mode -1)                     ; disable the button bar atop screen
+(scroll-bar-mode -1)                   ; disable scroll bar
+(setq make-backup-files nil)           ; disable backup files
+(setq inhibit-startup-screen t);       ; disable startup screen with graphics
+(setq-default indent-tabs-mode nil)    ; use spaces instead of tabs
+(setq tab-width 2)                     ; four spaces is a tab
+(show-paren-mode 1)                    ; highlight paranthesis
+(setq show-paren-delay 0)              ; highlight paranthesis immediately
+(setq visible-bell nil)                ; disable annoying visual bell graphics
+(setq ring-bell-function 'ignore)      ; disable annoying audio bell
+(set-face-attribute 'default nil :height 180) ; set font size to 18pt
+;(global-display-line-numbers-mode 1)  ; show line numbers
 
 ;; enable ido mode
 (ido-mode 1)
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
 
-;; disable startup splash screen
-(setq inhibit-startup-message t
-      inhibit-startup-echo-area-message t)
+;; fix keyboard bindingsk
+;(setq mac-option-modifier 'super)
+;(setq mac-command-modifier 'meta)
 
 ;; MELPA
 (require 'package)
 (add-to-list 'package-archives
 	     '("melpa" . "https://melpa.org/packages/") t)
-  ;;(add-to-list 'package-archives (cons "melpa-stable" (concat proto "://stable.melpa.org/packages/")) t)
 (package-initialize)
 
 ;; installed packages with MELPA
