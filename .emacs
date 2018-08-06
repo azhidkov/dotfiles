@@ -54,14 +54,6 @@
 
   (exec-path-from-shell-initialize))
 
-;; clojure-mode
-(unless (package-installed-p 'clojure-mode)
-  (package-install 'clojure-mode))
-
-;; cider
-(unless (package-installed-p 'cider)
-  (package-install 'cider))
-
 ;; flycheck
 (unless (package-installed-p 'flycheck)
   (package-install 'flycheck))
