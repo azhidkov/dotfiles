@@ -5,7 +5,7 @@
 (setq make-backup-files nil)           ; disable backup files
 (setq inhibit-startup-screen t);       ; disable startup screen with graphics
 (setq-default indent-tabs-mode nil)    ; use spaces instead of tabs
-(setq tab-width 2)                     ; four spaces is a tab
+(setq-default tab-width 4)             ; four spaces is a tab
 (show-paren-mode 1)                    ; highlight paranthesis
 (setq show-paren-delay 0)              ; highlight paranthesis immediately
 (setq visible-bell nil)                ; disable annoying visual bell graphics
