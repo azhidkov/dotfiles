@@ -47,13 +47,15 @@
 ;; company
 (unless (package-installed-p 'company)
   (package-install 'company))
+(require 'company)
 
 ;; exec-path-from-shell
 (when (memq window-system '(mac ns x))
   (unless (package-installed-p 'exec-path-from-shell)
     (package-install 'exec-path-from-shell))
 
-  (exec-path-from-shell-initialize))
+  (exec-path-from-shell-initialize)
+  (exec-path-from-shell-copy-env "GOPATH"))
 
 ;; projectile
 (unless (package-installed-p 'projectile)
@@ -68,6 +70,46 @@
 (flx-ido-mode 1)
 ;; disable ido faces to see flx hightlight
 (setq ido-use-faces nil)
+
+;; golang
+(unless (package-installed-p 'go-mode)
+  (package-install 'go-mode))
+
+(unless (package-installed-p 'company-go)
+  (package-install 'company-go))
+
+(unless (package-installed-p 'go-guru)
+  (package-install 'go-guru))
+
+(unless (package-installed-p 'flycheck-gometalinter)
+  (package-install 'flycheck-gometalinter))
+(require 'flycheck-gometalinter)
+(eval-after-load 'flycheck
+  '(add-hook 'flycheck-mode-hook #'flycheck-gometalinter-setup))
+
+(defun my-go-mode-hook()
+  (add-hook 'before-save-hook 'gofmt-before-save) ; gofmt before every save
+  (setq gofmt-command "goimports")                ; gofmt uses invokes goimports
+  (if (not (string-match "go" compile-command))   ; set compile command default
+      (set (make-local-variable 'compile-command)
+           "go build -v && go test -v && go vet"))
+
+  ;; guru settings
+  (go-guru-hl-identifier-mode) ; highlight identifiers
+
+  ;; key bindings specific to go-mode
+  (local-set-key (kbd "M-.") 'godef-jump)      ; go to definition
+  (local-set-key (kbd "M-*") 'pop-tag-mark)    ; return from whence you came
+  (local-set-key (kbd "M-p") 'compile)         ; invoke compiler
+  (local-set-key (kbd "M-P") 'recompile)       ; redo most recent compile cmd
+  (local-set-key (kbd "M-]") 'next-error)      ; go to next error or msg
+  (local-set-key (kbd "M-[") 'previous-error)) ; go to previous error or msg
+
+;; connect go-mode-hook with the function we just defined
+(add-hook 'go-mode-hook 'my-go-mode-hook)
+(require 'go-guru)
+(require 'company-go)
+;; end golang
 
 ;; flycheck
 (unless (package-installed-p 'flycheck)
