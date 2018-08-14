@@ -22,6 +22,7 @@
 ;; enable recentf-mode
 (recentf-mode 1)
 (setq recentf-max-menu-items 25)
+(add-to-list 'recentf-exclude "recentf")
 (run-at-time nil (* 5 60) 'recentf-save-list) ;; save every 5 minutes
 (global-set-key "\C-x\ \C-r" 'recentf-open-files)
 
@@ -121,9 +122,25 @@
 (unless (package-installed-p 'solarized-theme)
   (package-install 'solarized-theme))
 (require 'solarized)
+
+;; make the fringe stand out from the background
 (setq solarized-distinct-fringe-background t)
+
+;; Use less bolding
 (setq solarized-use-less-bold t)
+
+;; Don't change size of org-mode headlines (but keep other size-changes)
+(setq solarized-scale-org-headlines nil)
+
+;; Avoid all font-size changes
+(setq solarized-height-minus-1 1.0)
+(setq solarized-height-plus-1 1.0)
+(setq solarized-height-plus-2 1.0)
+(setq solarized-height-plus-3 1.0)
+(setq solarized-height-plus-4 1.0)
+
 (load-theme 'solarized-light t)
+;; end solarized-theme
 
 ;; flycheck
 (unless (package-installed-p 'flycheck)
