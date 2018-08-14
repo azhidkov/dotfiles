@@ -88,6 +88,14 @@
   '(add-hook 'flycheck-mode-hook #'flycheck-gometalinter-setup))
 
 (defun my-go-mode-hook()
+  (require 'go-guru)
+  (require 'company)
+  (require 'company-go)
+
+  ;; add company-go as backend to company
+  (set (make-local-variable 'company-backends) '(company-go))
+  (company-mode)
+
   (add-hook 'before-save-hook 'gofmt-before-save) ; gofmt before every save
   (setq gofmt-command "goimports")                ; gofmt uses invokes goimports
   (if (not (string-match "go" compile-command))   ; set compile command default
@@ -107,9 +115,15 @@
 
 ;; connect go-mode-hook with the function we just defined
 (add-hook 'go-mode-hook 'my-go-mode-hook)
-(require 'go-guru)
-(require 'company-go)
 ;; end golang
+
+;; solarized-theme
+(unless (package-installed-p 'solarized-theme)
+  (package-install 'solarized-theme))
+(require 'solarized)
+(setq solarized-distinct-fringe-background t)
+(setq solarized-use-less-bold t)
+(load-theme 'solarized-light t)
 
 ;; flycheck
 (unless (package-installed-p 'flycheck)
@@ -120,10 +134,13 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" default)))
  '(package-selected-packages (quote (company exec-path-from-shell flycheck))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+)
