@@ -165,9 +165,15 @@
 (unless (package-installed-p 'helm-projectile)
   (package-install 'helm-projectile))
 
+;; php-mode
+(unless (package-installed-p 'php-mode)
+  (package-install 'php-mode))
+
 ;; flycheck
 (unless (package-installed-p 'flycheck)
   (package-install 'flycheck))
+
+
 (add-hook 'after-init-hook #'global-flycheck-mode)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
