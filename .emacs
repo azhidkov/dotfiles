@@ -69,6 +69,7 @@
   (package-install 'projectile))
 (require 'projectile)
 (projectile-mode t)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
 ;; flx-mode
 (unless (package-installed-p 'flx-ido)
@@ -160,6 +161,10 @@
 (global-set-key (kbd "C-x C-b") #'helm-buffers-list)
 ;; end helm
 
+;; helm-projectile
+(unless (package-installed-p 'helm-projectile)
+  (package-install 'helm-projectile))
+
 ;; flycheck
 (unless (package-installed-p 'flycheck)
   (package-install 'flycheck))
@@ -178,4 +183,4 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
-)
+ )
