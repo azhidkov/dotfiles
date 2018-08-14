@@ -31,7 +31,6 @@
 (setq recentf-max-menu-items 25)
 (add-to-list 'recentf-exclude "recentf")
 (run-at-time nil (* 5 60) 'recentf-save-list) ;; save every 5 minutes
-(global-set-key "\C-x\ \C-r" 'recentf-open-files)
 
 ;; fix keyboard bindings
 ;(setq mac-option-modifier 'super)
@@ -148,6 +147,18 @@
 
 (load-theme 'solarized-light t)
 ;; end solarized-theme
+
+;; helm
+(unless (package-installed-p 'helm)
+  (package-install 'helm))
+(require 'helm-config)
+(helm-mode 1)
+(global-set-key (kbd "M-x") #'helm-M-x)
+(global-set-key (kbd "C-x r b") #'helm-filtered-bookmarks)
+(global-set-key (kbd "C-x C-f") #'helm-find-files)
+(global-set-key (kbd "C-x C-r") #'helm-recentf)
+(global-set-key (kbd "C-x C-b") #'helm-buffers-list)
+;; end helm
 
 ;; flycheck
 (unless (package-installed-p 'flycheck)
