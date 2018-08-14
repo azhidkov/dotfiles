@@ -15,8 +15,8 @@
 (cond
  ((find-font (font-spec :name "Source Code Pro"))
   (set-frame-font "Source Code Pro 20"))
- ((find-font (font-spec :name "Source Code Variable Regular"))
-  (set-frame-font "Source Code Variable Regula 20")))
+ ((find-font (font-spec :name "Source Code Variable"))
+  (set-frame-font "Source Code Variable 20")))
 
 ;(global-hl-line-mode +1)              ; highlight the current line
 ;(global-display-line-numbers-mode 1)  ; show line numbers
