@@ -10,7 +10,14 @@
 (setq show-paren-delay 0)              ; highlight paranthesis immediately
 (setq visible-bell nil)                ; disable annoying visual bell graphics
 (setq ring-bell-function 'ignore)      ; disable annoying audio bell
-(set-frame-font "Source Code Pro 20")  ; set font
+
+;; check available fonts and set available
+(cond
+ ((find-font (font-spec :name "Source Code Pro"))
+  (set-frame-font "Source Code Pro 20"))
+ ((find-font (font-spec :name "Source Code Variable Regular"))
+  (set-frame-font "Source Code Variable Regula 20")))
+
 ;(global-hl-line-mode +1)              ; highlight the current line
 ;(global-display-line-numbers-mode 1)  ; show line numbers
 
