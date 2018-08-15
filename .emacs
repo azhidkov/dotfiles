@@ -3,6 +3,7 @@
 (tool-bar-mode -1)                     ; disable the button bar atop screen
 (scroll-bar-mode -1)                   ; disable scroll bar
 (setq make-backup-files nil)           ; disable backup files
+(setq auto-save-default nil)           ; disable creating #autosave# files
 (setq inhibit-startup-screen t);       ; disable startup screen with graphics
 (setq-default indent-tabs-mode nil)    ; use spaces instead of tabs
 (setq-default tab-width 4)             ; four spaces is a tab
@@ -14,9 +15,9 @@
 ;; check available fonts and set available
 (cond
  ((find-font (font-spec :name "Source Code Pro"))
-  (set-frame-font "Source Code Pro 20"))
+  (set-frame-font "Source Code Pro 20"))       ; 20px on Macos
  ((find-font (font-spec :name "Source Code Variable"))
-  (set-frame-font "Source Code Variable 20")))
+  (set-frame-font "Source Code Variable 18"))) ; 18px on Linux
 
 ;(global-hl-line-mode +1)              ; highlight the current line
 ;(global-display-line-numbers-mode 1)  ; show line numbers
