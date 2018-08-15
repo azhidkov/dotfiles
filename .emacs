@@ -169,6 +169,17 @@
 (unless (package-installed-p 'php-mode)
   (package-install 'php-mode))
 
+;; web-mode
+(unless (package-installed-p 'web-mode)
+  (package-install 'web-mode))
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html\\.twig\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+;; end web-mode
+
 ;; flycheck
 (unless (package-installed-p 'flycheck)
   (package-install 'flycheck))
