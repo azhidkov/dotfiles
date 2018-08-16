@@ -56,6 +56,7 @@
 (unless (package-installed-p 'company)
   (package-install 'company))
 (require 'company)
+(add-hook 'after-init-hook 'global-company-mode) ;; use company-mode in all buffers
 
 ;; exec-path-from-shell
 (when (memq window-system '(mac ns x))
