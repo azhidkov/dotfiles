@@ -33,6 +33,8 @@
 (setq recentf-max-menu-items 25)
 (add-to-list 'recentf-exclude "recentf")
 (run-at-time nil (* 5 60) 'recentf-save-list) ;; save every 5 minutes
+(global-set-key "\C-x\ \C-r" 'recentf-open-files)
+
 
 ;; fix keyboard bindings
 ;(setq mac-option-modifier 'super)
