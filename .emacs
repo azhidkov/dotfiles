@@ -76,14 +76,6 @@
 (projectile-mode t)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
-;; flx-mode
-;;(unless (package-installed-p 'flx-ido)
-;;  (package-install 'flx-ido))
-;;(require 'flx-ido)
-;;(flx-ido-mode 1)
-;; disable ido faces to see flx hightlight
-;;(setq ido-use-faces nil)
-
 ;; golang
 (unless (package-installed-p 'go-mode)
   (package-install 'go-mode))
@@ -153,22 +145,6 @@
 
 (load-theme 'solarized-light t)
 ;; end solarized-theme
-
-;; helm
-;;(unless (package-installed-p 'helm)
-;;  (package-install 'helm))
-;;(require 'helm-config)
-;;(helm-mode 1)
-;;(global-set-key (kbd "M-x") #'helm-M-x)
-;;(global-set-key (kbd "C-x r b") #'helm-filtered-bookmarks)
-;;(global-set-key (kbd "C-x C-f") #'helm-find-files)
-;;(global-set-key (kbd "C-x C-r") #'helm-recentf)
-;;(global-set-key (kbd "C-x C-b") #'helm-buffers-list)
-;; end helm
-
-;; helm-projectile
-;;(unless (package-installed-p 'helm-projectile)
-;;  (package-install 'helm-projectile))
 
 ;; ivy-mode
 (unless (package-installed-p 'ivy)
