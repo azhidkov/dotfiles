@@ -11,7 +11,7 @@
 (setq show-paren-delay 0)              ; highlight paranthesis immediately
 (setq visible-bell nil)                ; disable annoying visual bell graphics
 (setq ring-bell-function 'ignore)      ; disable annoying audio bell
-(global-font-lock-mode 0)              ; turn off syntax highlight
+;(global-font-lock-mode 0)              ; turn off syntax highlight
 
 ;; check available fonts and set available
 (cond
