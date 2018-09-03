@@ -77,12 +77,12 @@
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
 ;; flx-mode
-(unless (package-installed-p 'flx-ido)
-  (package-install 'flx-ido))
-(require 'flx-ido)
-(flx-ido-mode 1)
+;;(unless (package-installed-p 'flx-ido)
+;;  (package-install 'flx-ido))
+;;(require 'flx-ido)
+;;(flx-ido-mode 1)
 ;; disable ido faces to see flx hightlight
-(setq ido-use-faces nil)
+;;(setq ido-use-faces nil)
 
 ;; golang
 (unless (package-installed-p 'go-mode)
@@ -155,20 +155,48 @@
 ;; end solarized-theme
 
 ;; helm
-(unless (package-installed-p 'helm)
-  (package-install 'helm))
-(require 'helm-config)
-(helm-mode 1)
-(global-set-key (kbd "M-x") #'helm-M-x)
-(global-set-key (kbd "C-x r b") #'helm-filtered-bookmarks)
-(global-set-key (kbd "C-x C-f") #'helm-find-files)
-(global-set-key (kbd "C-x C-r") #'helm-recentf)
-(global-set-key (kbd "C-x C-b") #'helm-buffers-list)
+;;(unless (package-installed-p 'helm)
+;;  (package-install 'helm))
+;;(require 'helm-config)
+;;(helm-mode 1)
+;;(global-set-key (kbd "M-x") #'helm-M-x)
+;;(global-set-key (kbd "C-x r b") #'helm-filtered-bookmarks)
+;;(global-set-key (kbd "C-x C-f") #'helm-find-files)
+;;(global-set-key (kbd "C-x C-r") #'helm-recentf)
+;;(global-set-key (kbd "C-x C-b") #'helm-buffers-list)
 ;; end helm
 
 ;; helm-projectile
-(unless (package-installed-p 'helm-projectile)
-  (package-install 'helm-projectile))
+;;(unless (package-installed-p 'helm-projectile)
+;;  (package-install 'helm-projectile))
+
+;; ivy-mode
+(unless (package-installed-p 'ivy)
+  (package-install 'ivy))
+(unless (package-installed-p 'swiper)
+  (package-install 'swiper))
+(unless (package-installed-p 'counsel)
+  (package-install 'counsel))
+(ivy-mode 1)
+(setq ivy-use-virtual-buffers t)
+(setq enable-recursive-minibuffers t)
+(global-set-key "\C-s" 'swiper)
+(global-set-key (kbd "C-c C-r") 'ivy-resume)
+(global-set-key (kbd "<f6>") 'ivy-resume)
+(global-set-key (kbd "M-x") 'counsel-M-x)
+(global-set-key (kbd "C-x C-f") 'counsel-find-file)
+(global-set-key (kbd "<f1> f") 'counsel-describe-function)
+(global-set-key (kbd "<f1> v") 'counsel-describe-variable)
+(global-set-key (kbd "<f1> l") 'counsel-find-library)
+(global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
+(global-set-key (kbd "<f2> u") 'counsel-unicode-char)
+(global-set-key (kbd "C-c g") 'counsel-git)
+(global-set-key (kbd "C-c j") 'counsel-git-grep)
+(global-set-key (kbd "C-c k") 'counsel-ag)
+(global-set-key (kbd "C-x l") 'counsel-locate)
+(global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
+(define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history)
+(setq projectile-completion-system 'ivy)
 
 ;; php-mode
 (unless (package-installed-p 'php-mode)
