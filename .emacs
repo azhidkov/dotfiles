@@ -89,8 +89,11 @@
 (unless (package-installed-p 'flycheck-gometalinter)
   (package-install 'flycheck-gometalinter))
 (require 'flycheck-gometalinter)
-(eval-after-load 'flycheck
-  '(add-hook 'flycheck-mode-hook #'flycheck-gometalinter-setup))
+;; Only enable selected linters
+(setq flycheck-gometalinter-disable-all t)
+(setq flycheck-gometalinter-enable-linters '("golint"))
+;;(eval-after-load 'flycheck
+;;  '(add-hook 'flycheck-mode-hook #'flycheck-gometalinter-setup))
 
 (defun my-go-mode-hook()
   (require 'go-guru)
