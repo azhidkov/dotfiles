@@ -9,6 +9,7 @@ fi
 
 export GOPATH=$HOME/go
 export GOBIN=$HOME/go/bin
+export GPG_TTY=$(tty)
 
 PATH=$PATH:$HOME/.local/bin:$HOME/bin:/usr/local/go/bin:$GOBIN
 export PATH
