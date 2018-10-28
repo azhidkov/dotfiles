@@ -16,3 +16,6 @@
 [submodule ".tmux/plugins/tpm"]
 	path = .tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
+[submodule ".vim/bundle/vim-go"]
+	path = .vim/bundle/vim-go
+	url = git@github.com:fatih/vim-go.git
