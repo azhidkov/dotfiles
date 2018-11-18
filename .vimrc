@@ -391,6 +391,10 @@ let g:syntastic_php_checkers = ['php'] "phpstan
 let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 
+" Go
+let g:syntastic_go_checkers = ['golint', 'govet']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+
 " Tagbar 
 let g:tagbar_autoclose = 1
 map <leader>tt :TagbarToggle<cr>
