@@ -336,8 +336,8 @@ noremap <C-d> :sh<cr>
 """"""""""""""""""""""""""""""""""
 " => GUI related
 """"""""""""""""""""""""""""""""""
-set number
-set relativenumber
+"set number
+"set relativenumber
 
 " Disable scrollbars (real hackers dont' user scrollbars for navigation)
 set guioptions-=r
