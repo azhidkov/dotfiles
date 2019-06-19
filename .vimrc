@@ -128,13 +128,13 @@ if has("gui_macvim")
 endif
 
 " Add a bit of extra margin to the left
-set foldcolumn=1
+"set foldcolumn=1
 
 """"""""""""""""""""""""""""""""""
 " => Colors and Fonts
 """"""""""""""""""""""""""""""""""
 " Disable syntax highlighting
-syntax on
+syntax off
 
 " Enable 256 colors palette in Gnome Terminal
 if !has("gui_running")
@@ -145,7 +145,7 @@ endif
 " install (patch) terminal with instructions from https://github.cbm/sgerrand/xfce4-terminal-colors-solarized
 "try
     "colorscheme desert
-    colorscheme solarized
+    "colorscheme solarized
 "catch
 "endtry
 
