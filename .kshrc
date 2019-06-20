@@ -21,7 +21,8 @@ export GPG_TTY=$(tty)
 PATH=$PATH:$HOME/.local/bin:$HOME/bin:/usr/local/go/bin:$GOBIN
 export PATH
 
-# TODO continue later
-# if [[ $(uname) == "Linux" ]]; then
-# echo "this is fedora"
-# fi
+if [[ $(uname) == "Linux" ]]; then
+    # Use vim with system clipboard
+    alias vim='vimx'
+    alias vi='vimx'
+fi
