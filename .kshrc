@@ -26,3 +26,4 @@ if [[ $(uname) == "Linux" ]]; then
     alias vim='vimx'
     alias vi='vimx'
 fi
+export PATH="/usr/local/opt/mysql-client/bin:$PATH"
