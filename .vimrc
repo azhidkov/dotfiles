@@ -339,7 +339,7 @@ noremap <C-d> :sh<cr>
 """"""""""""""""""""""""""""""""""
 " => GUI related
 """"""""""""""""""""""""""""""""""
-"set number
+set number
 "set relativenumber
 
 " Disable scrollbars (real hackers dont' user scrollbars for navigation)
