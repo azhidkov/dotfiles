@@ -296,10 +296,6 @@ if executable('ctags')
     let g:tagbar_ctags_bin = 'ctags'
 endif
 
-" Ack
-if executable('ag')
-  let g:ackprg = 'ag --nogroup --nocolor --column'
-endif
 """""""""""""""""""""""""""""""""""
 " => Helper functions
 """""""""""""""""""""""""""""""""""
