@@ -1,15 +1,27 @@
 " nocompatible has to be the first  of all
 set nocompatible
 
+" for installation of vim-plug see https://github.com/junegunn/vim-plug
+" for better experience install
+" 1. the_silver_seacher: https://github.com/ggreer/the_silver_searcher
+" 2. universal ctags: ctags.io
+" 3. fzf
+
+call plug#begin(stdpath('data') . '/plugged')
+Plug 'preservim/tagbar'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+call plug#end()
+
 """"""""""""""""""""""""""""""""""
 " => General
 """"""""""""""""""""""""""""""""""
 " use system clipboard
-if has("mac") || has("macunix")
-  set clipboard=unnamed
-else
-  set clipboard=unnamedplus
-endif
+" if has("mac") || has("macunix")
+"   set clipboard=unnamed
+" else
+"   set clipboard=unnamedplus
+" endif
 
 " Sets how many lines of history VIM has to remember
 set history=500
@@ -280,13 +292,12 @@ set guioptions-=L
 " Tagbar
 let g:tagbar_autoclose = 1
 map <leader>tt :TagbarToggle<cr>
-if executable('uctags')
-    let g:tagbar_ctags_bin = 'uctags'
+if executable('ctags')
+    let g:tagbar_ctags_bin = 'ctags'
 endif
 
 " Ack
 if executable('ag')
-  "let g:ackprg = 'ag --vimgrep'
   let g:ackprg = 'ag --nogroup --nocolor --column'
 endif
 """""""""""""""""""""""""""""""""""
